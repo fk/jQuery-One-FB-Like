@@ -37,7 +37,6 @@
 
       // Add #fb-root div - mandatory - do not remove
       $('body').append('<div id="fb-root"></div>');
-      $('#fb-like iframe').css('height','35px !important');
 
       // setup FB Developers App Link - do not touch
       window.fbAsyncInit = function() {
