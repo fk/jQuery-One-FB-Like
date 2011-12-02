@@ -20,7 +20,7 @@ jQuery.fn.onefblike = function(options) {
 	layout: 'normal',
 	action: 'like',
 	colorscheme: 'light'
-}
+};
 
 var options =  $.extend(defaults, options);
 
@@ -54,5 +54,5 @@ var options =  $.extend(defaults, options);
   jQuery(obj).html('<fb:like href="'+dynUrl+'" width="'+o.buttonWidth+'" height="'+o.buttonHeight+'" show_faces="'+o.showfaces+'" font="'+o.font+'" layout="'+o.layout+'" action="'+o.action+'" colorscheme="'+o.colorscheme+'"/>');
 
   });
-}
+};
 })(jQuery);
