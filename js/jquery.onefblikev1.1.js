@@ -5,7 +5,7 @@
 */
 
 (function($){
-  jQuery.fn.onefblike = function(options) {
+  $.fn.onefblike = function(options) {
 
     //Set the default values, use comma to separate the settings
     var defaults = {
