@@ -19,7 +19,8 @@
     font: 'lucida grande',
     layout: 'normal',
     action: 'like',
-    colorscheme: 'light'
+    colorscheme: 'light',
+    locale : 'en_US'
   };
 
   var options =  $.extend(defaults, options);
@@ -44,7 +45,7 @@
     };
     (function() {
       var e = document.createElement('script'); e.async = true;
-      e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+      e.src = document.location.protocol + '//connect.facebook.net/'+o.locale+'/all.js';
       jQuery('#fb-root').append(e);
     }());
 
