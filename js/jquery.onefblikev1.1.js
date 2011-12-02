@@ -20,6 +20,7 @@
       layout: 'normal',
       action: 'like',
       colorscheme: 'light',
+      send: 'false',
       locale : 'en_US'
     };
 
@@ -51,7 +52,7 @@
 
       // Apply the like button to an element on the page and include all available options
       // If no options are passed in from the page, the defaults will be applied
-      $(obj).html('<fb:like href="'+dynUrl+'" width="'+o.buttonWidth+'" height="'+o.buttonHeight+'" show_faces="'+o.showfaces+'" font="'+o.font+'" layout="'+o.layout+'" action="'+o.action+'" colorscheme="'+o.colorscheme+'"/>');
+      $(obj).html('<fb:like href="'+dynUrl+'" width="'+o.buttonWidth+'" height="'+o.buttonHeight+'" show_faces="'+o.showfaces+'" font="'+o.font+'" layout="'+o.layout+'" action="'+o.action+'" colorscheme="'+o.colorscheme+'" send="'+o.send+'"/>');
 
     });
   };
