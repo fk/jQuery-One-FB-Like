@@ -31,9 +31,9 @@
       var dynUrl = document.location;
 
       // Add Meta Tags for additional data - options
-      $('head').append('<meta property="og:title" content="' + o.siteTitle + '"/>');
-      $('head').append('<meta property="og:site_name" content="' + o.siteName + '"/>');
-      $('head').append('<meta property="og:image" content="' + o.siteImage + '"/>');
+      $('head').append('<meta property="og:title" content="' + o.siteTitle + '"/>')
+               .append('<meta property="og:site_name" content="' + o.siteName + '"/>')
+               .append('<meta property="og:image" content="' + o.siteImage + '"/>');
 
       // Add #fb-root div - mandatory - do not remove
       $('body').append('<div id="fb-root"></div>');
