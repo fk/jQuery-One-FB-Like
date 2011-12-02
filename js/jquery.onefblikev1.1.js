@@ -5,54 +5,54 @@
 */
 
 (function($){
-  $.fn.onefblike = function(options) {
 
+  $.fn.onefblike = function(options) {
     //Set the default values, use comma to separate the settings
     var defaults = {
-    appID: '102476223147670',
-    //siteTitle: '',
-    //siteName: '',
-    //siteImage: '',
-    buttonWidth: 450,
-    buttonHeight: 60,
-    showfaces: true,
-    font: 'lucida grande',
-    layout: 'normal',
-    action: 'like',
-    colorscheme: 'light',
-    locale : 'en_US'
-  };
+      appID: '102476223147670',
+      //siteTitle: '',
+      //siteName: '',
+      //siteImage: '',
+      buttonWidth: 450,
+      buttonHeight: 60,
+      showfaces: true,
+      font: 'lucida grande',
+      layout: 'normal',
+      action: 'like',
+      colorscheme: 'light',
+      locale : 'en_US'
+    };
 
-  var options =  $.extend(defaults, options);
+    var options = $.extend(defaults, options);
 
     return this.each(function() {
-    var o = options;
-    var obj = $(this);
-    var dynUrl = document.location;
+      var o = options;
+      var obj = $(this);
+      var dynUrl = document.location;
 
-    // Add Meta Tags for additional data - options
-    jQuery('head').append('<meta property="og:title" content="'+o.siteTitle+'"/>');
-    jQuery('head').append('<meta property="og:site_name" content="'+o.siteName+'"/>');
-    jQuery('head').append('<meta property="og:image" content="'+o.siteImage+'"/>');
+      // Add Meta Tags for additional data - options
+      $('head').append('<meta property="og:title" content="' + o.siteTitle + '"/>');
+      $('head').append('<meta property="og:site_name" content="' + o.siteName + '"/>');
+      $('head').append('<meta property="og:image" content="' + o.siteImage + '"/>');
 
-    // Add #fb-root div - mandatory - do not remove
-    jQuery('body').append('<div id="fb-root"></div>');
-    jQuery('#fb-like iframe').css('height','35px !important');
+      // Add #fb-root div - mandatory - do not remove
+      $('body').append('<div id="fb-root"></div>');
+      $('#fb-like iframe').css('height','35px !important');
 
-    // setup FB Developers App Link - do not touch
-    window.fbAsyncInit = function() {
-      FB.init({appId: o.appID, status: true, cookie: true, xfbml: true});
-    };
-    (function() {
-      var e = document.createElement('script'); e.async = true;
-      e.src = document.location.protocol + '//connect.facebook.net/'+o.locale+'/all.js';
-      jQuery('#fb-root').append(e);
-    }());
+      // setup FB Developers App Link - do not touch
+      window.fbAsyncInit = function() {
+        FB.init({appId: o.appID, status: true, cookie: true, xfbml: true});
+      };
+      (function() {
+        var e = document.createElement('script'); e.async = true;
+        e.src = document.location.protocol + '//connect.facebook.net/'+o.locale+'/all.js';
+        $('#fb-root').append(e);
+      }());
 
 
-    // Apply the like button to an element on the page and include all available options
-    // If no options are passed in from the page, the defaults will be applied
-    jQuery(obj).html('<fb:like href="'+dynUrl+'" width="'+o.buttonWidth+'" height="'+o.buttonHeight+'" show_faces="'+o.showfaces+'" font="'+o.font+'" layout="'+o.layout+'" action="'+o.action+'" colorscheme="'+o.colorscheme+'"/>');
+      // Apply the like button to an element on the page and include all available options
+      // If no options are passed in from the page, the defaults will be applied
+      $(obj).html('<fb:like href="'+dynUrl+'" width="'+o.buttonWidth+'" height="'+o.buttonHeight+'" show_faces="'+o.showfaces+'" font="'+o.font+'" layout="'+o.layout+'" action="'+o.action+'" colorscheme="'+o.colorscheme+'"/>');
 
     });
   };
