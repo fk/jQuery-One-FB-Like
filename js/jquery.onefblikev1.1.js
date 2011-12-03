@@ -45,7 +45,11 @@
       
       $.each(o.tags, function(key, value) {
         if( value.length > 0 ){
-          meta += '<meta property="og:' + key + '" content="' + value + '"/>';
+          if( key === "admins"){
+            meta += '<meta property="fb:' + key + '" content="' + value + '"/>';
+          } else {
+            meta += '<meta property="og:' + key + '" content="' + value + '"/>';
+          }
         }
       });
       
