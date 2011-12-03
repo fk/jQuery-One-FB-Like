@@ -10,26 +10,25 @@
     //Set the default values, use comma to separate the settings
     var defaults = {
       appID: '102476223147670',
-      width: 450,
-      show_faces: true,
-      font: 'lucida grande',  // arial, lucida grande, segoe ui, tahoma, trebuchet ms, verdana
-      layout: 'standard',     // standard, button_count, box_count
-      action: 'like',         // like, recommend
-      colorscheme: 'light',   // light, dark
-      send: false,
-      locale : 'en_US'
+      locale: 'en_US',
+      attributes: {
+        href: document.location,
+        send: false,
+        layout: '',             // standard, button_count, box_count (defaults to standard)
+        show_faces: true,
+        width: 450,
+        action: '',             // like, recommend (defaults to like)
+        font: '',               // arial, lucida grande, segoe ui, tahoma, trebuchet ms, verdana (defaults to lucida grande)
+        colorscheme: ''         // light, dark (defaults to light)
+      }
     };
 
     var options = $.extend(defaults, options);
 
     return this.each(function() {
       var o = options;
+      var attributes = o.attributes;
       var obj = $(this);
-      var dynUrl = document.location;
-      
-      if (o.href) {
-        dynUrl = o.href;
-      }
 
       // Add #fb-root div - mandatory - do not remove
       $('body').append('<div id="fb-root"></div>');
@@ -46,9 +45,18 @@
         $('#fb-root').append(e);
       }());
 
+      // build like-button
+      var html = "";
+
+      $.each(attributes, function(key, value) {
+        if( value !== '' ){
+          html += key + '="' + value + '" ';
+        }
+      });
+
       // Apply the like button to an element on the page and include all available options
       // If no options are passed in from the page, the defaults will be applied
-      $(obj).html('<fb:like href="'+dynUrl+'" width="'+o.width+'" show_faces="'+o.showfaces+'" font="'+o.font+'" layout="'+o.layout+'" action="'+o.action+'" colorscheme="'+o.colorscheme+'" send="'+o.send+'"/>');
+      $(obj).html('<fb:like '+html+'/>');
 
     });
   };
