@@ -11,7 +11,6 @@
     var defaults = {
       appID: '102476223147670',
       buttonWidth: 450,
-      buttonHeight: 60,
       showfaces: true,
       font: 'lucida grande',  // arial, lucida grande, segoe ui, tahoma, trebuchet ms, verdana
       layout: 'standard',     // standard, button_count, box_count
@@ -49,7 +48,7 @@
 
       // Apply the like button to an element on the page and include all available options
       // If no options are passed in from the page, the defaults will be applied
-      $(obj).html('<fb:like href="'+dynUrl+'" width="'+o.buttonWidth+'" height="'+o.buttonHeight+'" show_faces="'+o.showfaces+'" font="'+o.font+'" layout="'+o.layout+'" action="'+o.action+'" colorscheme="'+o.colorscheme+'" send="'+o.send+'"/>');
+      $(obj).html('<fb:like href="'+dynUrl+'" width="'+o.buttonWidth+'" show_faces="'+o.showfaces+'" font="'+o.font+'" layout="'+o.layout+'" action="'+o.action+'" colorscheme="'+o.colorscheme+'" send="'+o.send+'"/>');
 
     });
   };
