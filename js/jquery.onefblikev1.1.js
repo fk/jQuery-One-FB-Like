@@ -19,10 +19,10 @@
       colorscheme: 'light',   // light, dark
       send: false,
       locale : 'en_US',
-      tags: {
-        title: '',
-        site_name: '',
-        image: '',
+      tags: {                 // from what i understand, these most probably
+        title: '',            // will never be recognized by the facebook scraper
+        site_name: '',        // when inserted via JavaScript
+        image: '',            // @todo@ review, remove
         type: '',
         url: '',
         admins: ''
