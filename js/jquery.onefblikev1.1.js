@@ -31,8 +31,8 @@
       var obj = $(this);
       var dynUrl = document.location;
       
-      if (o.url) {
-        dynUrl = o.url;
+      if (o.href) {
+        dynUrl = o.href;
       }
 
       // Add Meta Tags for additional data - options
