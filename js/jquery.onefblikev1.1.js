@@ -20,12 +20,12 @@
       send: false,
       locale : 'en_US',
       tags: {
-          title: '',
-          site_name: '',
-          image: '',
-          type: '',
-          url: '',
-          admins: ''
+        title: '',
+        site_name: '',
+        image: '',
+        type: '',
+        url: '',
+        admins: ''
       }
     };
 
