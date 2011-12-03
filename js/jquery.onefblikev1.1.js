@@ -47,8 +47,10 @@
       window.fbAsyncInit = function() {
         FB.init({appId: o.appID, status: true, cookie: true, xfbml: true});
       };
+
       (function() {
-        var e = document.createElement('script'); e.async = true;
+        var e = document.createElement('script');
+        e.async = true;
         e.src = document.location.protocol + '//connect.facebook.net/'+o.locale+'/all.js';
         $('#fb-root').append(e);
       }());
