@@ -18,15 +18,7 @@
       action: 'like',         // like, recommend
       colorscheme: 'light',   // light, dark
       send: false,
-      locale : 'en_US',
-      tags: {                 // from what i understand, these most probably
-        title: '',            // will never be recognized by the facebook scraper
-        site_name: '',        // when inserted via JavaScript
-        image: '',            // @todo@ review, remove
-        type: '',
-        url: '',
-        admins: ''
-      }
+      locale : 'en_US'
     };
 
     var options = $.extend(defaults, options);
@@ -38,23 +30,6 @@
       
       if (o.href) {
         dynUrl = o.href;
-      }
-
-      // Add Meta Tags for additional data - options
-      var meta = "";
-      
-      $.each(o.tags, function(key, value) {
-        if( value.length > 0 ){
-          if( key === "admins"){
-            meta += '<meta property="fb:' + key + '" content="' + value + '"/>';
-          } else {
-            meta += '<meta property="og:' + key + '" content="' + value + '"/>';
-          }
-        }
-      });
-      
-      if ( meta.length > 0 ) {
-        $('head').append(meta);
       }
 
       // Add #fb-root div - mandatory - do not remove
