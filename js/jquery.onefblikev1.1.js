@@ -17,7 +17,7 @@
       buttonHeight: 60,
       showfaces: true,
       font: 'lucida grande',  // arial, lucida grande, segoe ui, tahoma, trebuchet ms, verdana
-      layout: 'normal',       // standart, button_count, box_count
+      layout: 'standart',     // standart, button_count, box_count
       action: 'like',         // like, recommend
       colorscheme: 'light',   // light, dark
       send: false,
