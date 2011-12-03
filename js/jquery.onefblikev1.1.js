@@ -16,10 +16,10 @@
       buttonWidth: 450,
       buttonHeight: 60,
       showfaces: true,
-      font: 'lucida grande',
-      layout: 'normal',
-      action: 'like',
-      colorscheme: 'light',
+      font: 'lucida grande',  // arial, lucida grande, segoe ui, tahoma, trebuchet ms, verdana
+      layout: 'normal',       // standart, button_count, box_count
+      action: 'like',         // like, recommend
+      colorscheme: 'light',   // light, dark
       send: false,
       locale : 'en_US'
     };
