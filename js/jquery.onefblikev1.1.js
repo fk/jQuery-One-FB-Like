@@ -10,9 +10,6 @@
     //Set the default values, use comma to separate the settings
     var defaults = {
       appID: '102476223147670',
-      //siteTitle: '',
-      //siteName: '',
-      //siteImage: '',
       buttonWidth: 450,
       buttonHeight: 60,
       showfaces: true,
@@ -21,7 +18,15 @@
       action: 'like',         // like, recommend
       colorscheme: 'light',   // light, dark
       send: false,
-      locale : 'en_US'
+      locale : 'en_US',
+      tags: {
+          title: '',
+          site_name: '',
+          image: '',
+          type: '',
+          url: '',
+          admins: ''
+      }
     };
 
     var options = $.extend(defaults, options);
@@ -36,9 +41,20 @@
       }
 
       // Add Meta Tags for additional data - options
-      $('head').append('<meta property="og:title" content="' + o.siteTitle + '"/>')
-               .append('<meta property="og:site_name" content="' + o.siteName + '"/>')
-               .append('<meta property="og:image" content="' + o.siteImage + '"/>');
+      var meta = "",
+          tag  = "";
+      
+      for (tag in o.tags) {
+        if (o.tags.hasOwnProperty(tag)) {
+          var content = o.tags[tag];
+          if( content.length > 0 ){
+            meta += '<meta property="og:' + tag + '" content="' + content + '"/>';
+          }
+        }
+      }
+      if ( meta.length > 0 ) {
+        $('head').append(meta);
+      }
 
       // Add #fb-root div - mandatory - do not remove
       $('body').append('<div id="fb-root"></div>');
