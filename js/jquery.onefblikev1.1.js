@@ -32,7 +32,9 @@
       var obj = $(this);
 
       // Add #fb-root div - mandatory - do not remove
-      $('body').append('<div id="fb-root"></div>');
+      if( !($('#fb-root').length) ){
+        $('body').append('<div id="fb-root"></div>');
+      }
 
       // setup FB Developers App Link - do not touch
       window.fbAsyncInit = function() {
