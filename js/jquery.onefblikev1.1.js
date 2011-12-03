@@ -41,17 +41,14 @@
       }
 
       // Add Meta Tags for additional data - options
-      var meta = "",
-          tag  = "";
+      var meta = "";
       
-      for (tag in o.tags) {
-        if (o.tags.hasOwnProperty(tag)) {
-          var content = o.tags[tag];
-          if( content.length > 0 ){
-            meta += '<meta property="og:' + tag + '" content="' + content + '"/>';
-          }
+      $.each(o.tags, function(key, value) {
+        if( value.length > 0 ){
+          meta += '<meta property="og:' + key + '" content="' + value + '"/>';
         }
-      }
+      });
+      
       if ( meta.length > 0 ) {
         $('head').append(meta);
       }
