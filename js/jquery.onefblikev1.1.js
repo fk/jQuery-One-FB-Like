@@ -20,7 +20,7 @@
       layout: 'normal',
       action: 'like',
       colorscheme: 'light',
-      send: 'false',
+      send: false,
       locale : 'en_US'
     };
 
