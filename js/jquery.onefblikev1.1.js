@@ -11,6 +11,7 @@
     var defaults = {
       appID: '102476223147670',
       locale: 'en_US',
+      html5: false,
       attributes: {
         href: document.location,
         send: false,
@@ -46,17 +47,22 @@
       }());
 
       // build like-button
-      var html = "";
+      var html = "",
+          tag = "fb:like ";
 
       $.each(attributes, function(key, value) {
         if( value !== '' ){
+          if (o.html5){
+            tag = 'div class="fb-like "';
+            key = 'data-' + key.replace("_", "-");
+          }
           html += key + '="' + value + '" ';
         }
       });
 
       // Apply the like button to an element on the page and include all available options
       // If no options are passed in from the page, the defaults will be applied
-      $(obj).html('<fb:like '+html+'/>');
+      $(obj).html('<' + tag + html + '/>');
 
     });
   };
