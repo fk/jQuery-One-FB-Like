@@ -30,6 +30,10 @@
       var o = options;
       var obj = $(this);
       var dynUrl = document.location;
+      
+      if (o.url) {
+        dynUrl = o.url;
+      }
 
       // Add Meta Tags for additional data - options
       $('head').append('<meta property="og:title" content="' + o.siteTitle + '"/>')
@@ -48,7 +52,6 @@
         e.src = document.location.protocol + '//connect.facebook.net/'+o.locale+'/all.js';
         $('#fb-root').append(e);
       }());
-
 
       // Apply the like button to an element on the page and include all available options
       // If no options are passed in from the page, the defaults will be applied
