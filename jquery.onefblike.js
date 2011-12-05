@@ -1,3 +1,5 @@
+/*jshint browser:true, jquery:true */
+
 /*
   jQuery OneFBLike v1.1 - http://onerutter.com/open-source/jquery-facebook-like-plugin.html
   Copyright (c) 2010 Jake Rutter
